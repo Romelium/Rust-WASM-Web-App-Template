@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Rust+WASM Drawing App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app-wrapper">
+        <h1>Rust+WASM Drawing App</h1>
+        <div id="main-app-container">
+            <!-- The WASM application will create and mount its own DOM elements here. -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { run_app } from './main.js';
+        
+        async function main() {
+            try {
+                const appInstance = await run_app();
+                if (appInstance) {
+                    console.log("Application started successfully.");
+                    window.appInstance = appInstance; // For E2E tests and debugging
+                } else {
+                    console.error("Application failed to initialize.");
+                }
+            } catch (e) {
+                console.error("Critical error during application startup:", e);
+            }
+        }
+        main();
+    </script>
+</body>
+</html>

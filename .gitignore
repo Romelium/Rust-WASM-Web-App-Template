@@ -1,0 +1,20 @@
+# Rust
+/target
+Cargo.lock
+
+# Node
+/node_modules
+.pnpm-store/
+
+# WASM build output
+/static/pkg
+/app/pkg
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Playwright
+/playwright-report/
+/test-results/

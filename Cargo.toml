@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "base",
+    "app",
+    "cli"
+]
+resolver = "2"
+
+[profile.release]
+lto = true
+opt-level = 's' # Optimize for size
